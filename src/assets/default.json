@@ -1,0 +1,212 @@
+[
+  [
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    },
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    },
+    {
+      "ucitel": "Kre",
+      "predmet": "M",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Ju",
+      "predmet": "A",
+      "mistnost": "J4"
+    },
+    {
+      "ucitel": "Jež/Vaš",
+      "predmet": "Fcv/Chcv",
+      "mistnost": "F1/Ch2"
+    },
+	   {
+      "ucitel": "Jež/Vaš",
+      "predmet": "Fcv/Chcv",
+      "mistnost": "F1/Ch2"
+    },
+    {
+      "ucitel": "Ple",
+      "predmet": "Čcv",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Sed",
+      "predmet": "N",
+      "mistnost": "J2"
+    }
+  ],
+  [
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    },
+    {
+      "ucitel": "Han",
+      "predmet": "D",
+      "mistnost": "D"
+    },
+    {
+      "ucitel": "Kre",
+      "predmet": "M",
+      "mistnost": "M"
+    },
+    {
+      "ucitel": "Ple",
+      "predmet": "Č",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Vaš",
+      "predmet": "Ch",
+      "mistnost": "Ch1"
+    },
+    {
+      "ucitel": "Hs",
+      "predmet": "Z",
+      "mistnost": "2C"
+    },
+    {
+      "ucitel": "Hk",
+      "predmet": "In3L",
+      "mistnost": "T1"
+    },
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    }
+  ],
+  [
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    },
+    {
+      "ucitel": "Ple",
+      "predmet": "Č",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Vaš",
+      "predmet": "Bi",
+      "mistnost": "Bi1"
+    },
+    {
+      "ucitel": "Hp",
+      "predmet": "A",
+      "mistnost": "J3"
+    },
+    {
+      "ucitel": "Ju",
+      "predmet": "A",
+      "mistnost": "J4"
+    },
+    {
+      "ucitel": "Kre",
+      "predmet": "Mcv",
+      "mistnost": "1C"
+    },
+    {
+      "ucitel": "Sed",
+      "predmet": "N",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Jež",
+      "predmet": "F",
+      "mistnost": "3D"
+    }
+  ],
+  [
+    {
+      "ucitel": "Hs",
+      "predmet": "Tvh",
+      "mistnost": "Tv1"
+    },
+	{
+      "ucitel": "Hs",
+      "predmet": "Tvh",
+      "mistnost": "Tv1"
+    },
+    {
+      "ucitel": "Mař",
+      "predmet": "Ak2l",
+      "mistnost": "3B"
+    },
+    {
+      "ucitel": "Ju",
+      "predmet": "Ak2l",
+      "mistnost": "3B"
+    },
+    {
+      "ucitel": "Han",
+      "predmet": "D",
+      "mistnost": "D"
+    },
+    {
+      "ucitel": "Jež",
+      "predmet": "F",
+      "mistnost": "F2"
+    },
+    {
+      "ucitel": "Hs",
+      "predmet": "Z",
+      "mistnost": "2C"
+    },
+    {
+      "ucitel": "Hk",
+      "predmet": "In3L",
+      "mistnost": "T1"
+    }
+  ],
+  [
+    {
+      "ucitel": " ",
+      "predmet": " ",
+      "mistnost": " "
+    },
+    {
+      "ucitel": "Ple",
+      "predmet": "Č",
+      "mistnost": "4B"
+    },
+    {
+      "ucitel": "Šle",
+      "predmet": "Sv",
+      "mistnost": "D"
+    },
+    {
+      "ucitel": "Vaš",
+      "predmet": "Ch",
+      "mistnost": "Ch1"
+    },
+    {
+      "ucitel": "Ju",
+      "predmet": "A",
+      "mistnost": "3D"
+    },
+    {
+      "ucitel": "Vaš",
+      "predmet": "Bi",
+      "mistnost": "Ch1"
+    },
+    {
+      "ucitel": "Kre",
+      "predmet": "M",
+      "mistnost": "2C"
+    },
+    {
+      "ucitel": "Sed",
+      "predmet": "N",
+      "mistnost": "3D"
+    }
+  ]
+]
