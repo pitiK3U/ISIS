@@ -1,4 +1,4 @@
-# zmp
+# ISIS
 
 ## Project setup
 ```
