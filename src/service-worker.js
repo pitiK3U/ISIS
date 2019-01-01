@@ -1,4 +1,3 @@
-
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`)
 
@@ -6,7 +5,7 @@ if (workbox) {
     prefix: 'my-app',
     suffix: 'v1',
     precache: 'install-time',
-    runtime: 'run-time',
+    runtime: 'run-time'
   })
 
   // Will print 'my-app-install-time-v1'
@@ -16,7 +15,6 @@ if (workbox) {
   console.log(workbox.core.cacheNames.runtime)
 
   workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
-
 } else {
   console.log(`Boo! Workbox didn't load 😬`)
 }
