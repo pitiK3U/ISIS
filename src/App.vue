@@ -33,7 +33,8 @@ export default {
     updateTime: function () {
       this.time = moment()
       this.check()
-      if (this.checkTime.format('HH:mm:ss') === this.time.format('HH:mm:ss')) {
+      // console.log(this.checkTime.format('HH:mm'), this.time.format('HH:mm'))
+      if (this.checkTime.format('HH:mm') === this.time.format('HH:mm')) {
         this.notify()
       }
     },
@@ -53,7 +54,7 @@ export default {
     notify: function () {
       const registration = global.REG
       const day = this.time.day() - 1
-      registration.showNotification('Next subject is ' + SchoolHours[day][Math.round(this.index / 2)].predmet + ' in ' + SchoolHours[day][Math.round(this.index / 2)].mistnost + ', starts: ' + this.json[this.index], { body: this.time.format('HH:mm:ss') })
+      registration.showNotification(this.time.format('HH:mm:ss'), { body: 'Next subject is ' + SchoolHours[day][Math.round(this.index / 2)].predmet + ' in ' + SchoolHours[day][Math.round(this.index / 2)].mistnost + ', starts: ' + this.json[this.index] })
     }
   },
   components: {
