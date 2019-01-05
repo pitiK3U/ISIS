@@ -38,7 +38,7 @@ export default {
   components: {
     MenuIcon
   }
-}
+} // TODO: Fix invisible routing
 </script>
 
 <style scoped lang="css">
