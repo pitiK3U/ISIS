@@ -9,8 +9,8 @@
         <i class="material-icons small">grid_on</i>
       </div>
 
-      <div class="buttons" @click="goTo('home')" >
-        <i class="material-icons small">event</i>
+      <div style="background-color:gray;" class="buttons"> <!-- TODO: @click="goTo('Settings')" > -->
+        <i class="material-icons small">settings</i>
       </div>
 
       <div class="buttons" >
@@ -38,7 +38,7 @@ export default {
   components: {
     MenuIcon
   }
-} // TODO: Fix invisible routing
+} // FIXME: Fix invisible routing
 </script>
 
 <style scoped lang="css">

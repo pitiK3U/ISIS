@@ -12,7 +12,7 @@
             <td v-for ="(hour, hourIndex) in day"
                 v-if = "(JSON.stringify(hour) != JSON.stringify(day[hourIndex-1])) == (JSON.stringify(hour) != JSON.stringify(day[hourIndex+1]))"
                 v-bind:key = "hourIndex"
-                 >
+                 > <!-- FIXME: Fix v-if in v-for-->
               <div class = "teacher">
                 {{ hour.ucitel }}
               </div>
