@@ -14,9 +14,10 @@ module.exports = {
     appleMobileWebAppStatusBarStyle: 'black',
 
     // configure the workbox plugin
-    workboxPluginMode: 'GenerateSW',
+    workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      // swSrc: './src/service-worker.js'
+      // skipWaiting: true,
+      swSrc: './src/service-worker.js'
       /* runtimeCaching: [{
         // Match any same-origin request that contains 'api'.
         urlPattern: /./,

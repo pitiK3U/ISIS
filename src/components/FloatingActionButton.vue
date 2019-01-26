@@ -9,7 +9,7 @@
         <i class="material-icons small">grid_on</i>
       </div>
 
-      <div style="background-color:gray;" class="buttons"> <!-- TODO: @click="goTo('Settings')" > -->
+      <div class="buttons" @click="goTo('Settings')" >
         <i class="material-icons small">settings</i>
       </div>
 

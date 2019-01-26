@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 const TimeTable = () => import(/* webpackChunkName: "TimeTable" */ './views/TimeTable.vue')
+const Settings = () => import(/* webpackChunkName: "Settings" */ './views/Settings.vue')
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/TimeTable',
       name: 'TimeTable',
       component: TimeTable
+    },
+    {
+      path: '/Settings',
+      name: 'Settings',
+      component: Settings
     }
   ]
 })
