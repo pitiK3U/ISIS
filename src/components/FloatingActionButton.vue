@@ -9,8 +9,8 @@
         <i class="material-icons small">grid_on</i>
       </div>
 
-      <div class="buttons" @click="goTo('home')" >
-        <i class="material-icons small">event</i>
+      <div class="buttons" @click="goTo('Settings')" >
+        <i class="material-icons small">settings</i>
       </div>
 
       <div class="buttons" >
@@ -38,57 +38,63 @@ export default {
   components: {
     MenuIcon
   }
-} // TODO: Fix invisible routing
+}
 </script>
 
 <style scoped lang="css">
 .material-icons.small {
-  display: block;
-  padding-top: 8px;
-  padding-left: 8px;
-  width: 12px;
+  margin-top: 8px;
   font-size: 24px;
 }
 
 .container {
-  bottom: 32px;
   position: fixed;
-  margin: 1em;
-  right: 16px;
+  bottom: 1rem;
+  right: 1rem;
 }
 
-.buttons {
+@media(min-width: 1024px) {
+    .container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+ .buttons {
   background-color: white;
-  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18),
-            0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),
+              0 6px 10px 0 rgba(0,0,0,.14),
+              0 1px 18px 0 rgba(0,0,0,.12);
   border-radius: 50%;
-  display: block;
   width: 56px;
   height: 56px;
   margin: 20px auto 0;
   position: relative;
-  text-align: center;
-  box-sizing: border-box;
-  font-size: 26px;
-  -webkit-transition: transform 200ms;
-          transition: transform 200ms;
+}
+
+.buttons:focus,
+.buttons:hover {
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),
+              0 8px 10px 1px rgba(0,0,0,.14),
+              0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+.buttons:active {
+  box-shadow: 0 7px 8px -4px rgba(0,0,0,.2),
+              0 12px 17px 2px rgba(0,0,0,.14),
+              0 5px 22px 4px rgba(0,0,0,.12);
 }
 
 .buttons:last-child {
   z-index: 1000;
 }
 
-.buttons:active,
-.buttons:focus,
-.buttons:hover {
-  box-shadow: 0 0 4px rgba(0,0,0,.14),
-    0 4px 8px rgba(0,0,0,.28);
-}
-
 .buttons:not(:last-child) {
   width: 40px;
   height: 40px;
-  margin: 20px auto 0;
+  margin-top: 15px;
+  pointer-events: none;
   opacity: 0;
   -webkit-transform: translateY(50px);
       -ms-transform: translateY(50px);
@@ -114,9 +120,9 @@ export default {
 .container, .clicked
 .buttons:not(:last-child) {
   opacity: 1;
+  pointer-events: auto;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
-  margin: 15px auto 0;
 }
 </style>

@@ -9,10 +9,10 @@ if (workbox) {
   })
 
   // Will print 'my-app-install-time-v1'
-  console.log(workbox.core.cacheNames.precache)
+  // console.log(workbox.core.cacheNames.precache)
 
   // Will print 'my-app-run-time-v1'
-  console.log(workbox.core.cacheNames.runtime)
+  // console.log(workbox.core.cacheNames.runtime)
 
   workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
 } else {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA {{ width }}</span>
+      <span></span>
     </header>
     <main>
       <router-view></router-view>
@@ -51,10 +51,13 @@ export default {
       }
       document.getElementsByTagName('span')[0].style.width = this.width
     },
-    notify: function () {
-      const registration = global.REG
-      const day = this.time.day() - 1
-      registration.showNotification(this.time.format('HH:mm:ss'), { body: 'Next subject is ' + SchoolHours[day][Math.round(this.index / 2)].predmet + ' in ' + SchoolHours[day][Math.round(this.index / 2)].mistnost + ', starts: ' + this.json[this.index] })
+    notify: function () { // FIXME: Notification on mobile
+      if (Notification.permission === 'granted') {
+        navigator.serviceWorker.ready.then(registration => {
+          const day = this.time.day() - 1
+          registration.showNotification(this.time.format('HH:mm:ss'), { body: 'Next subject is ' + SchoolHours[day][Math.round(this.index / 2)].predmet + ' in ' + SchoolHours[day][Math.round(this.index / 2)].mistnost + ', starts: ' + this.json[this.index] })
+        })
+      }
     }
   },
   components: {
@@ -92,19 +95,14 @@ main {
 header {
   margin: 0;
   height: 56px;
-  padding: 0 16px 0 24px;
   background-color: #35495E;
   color: #ffffff;
   span {
     display: block;
     position: relative;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: .02em;
-    font-weight: 400;
     box-sizing: border-box;
-    padding-top: 16px;
     background-color: green;
+    height: 100%;
   }
 }
 </style>
