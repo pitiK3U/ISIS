@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    .hodina {
+      float: left;
+    }
+
+    .den {
+      clear: both;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="tyden">
+  </div>
+  <div style="clear: both;">
+    <button onclick="dalsi()">Další hodina
+    </button>
+    <button onclick="dalsiden()">Další den
+    </button><br />
+    <input type="submit" value="Submit" name="Submit" onclick="submit()">
+  </div>
+  <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+  <script>
+    var pocethodin = 0,
+      den = 0;
+    div = "<div class=\"den\">"
+
+
+    function Hodiny(ucitel, predmet, mistnost) {
+      this.ucitel = ucitel;
+      this.predmet = predmet;
+      this.mistnost = mistnost;
+    }
+
+    function dalsi() {
+      pocethodin++;
+
+      div +=
+        "<div class=\"hodina\"><input type=\"text\" class=\"prof\"><br /><input type=\"text\" class=\"pred\"><br /><input type=\"text\" class=\"pred\"><br /></div>";
+      vypis();
+    }
+
+    function dalsiden() {
+      div += "</div>";
+      den++;
+      if (den < 5) div += "<div class=\"den\">";
+      vypis();
+    }
+
+    function vypis() {
+      $("#tyden").html(div);
+    }
+
+    var tyden = [];
+
+    function submit() {
+      var pct = 0;
+      for (var i = 0; i < $(".den").length; i++) {
+        tyden.push([]);
+        for (var j = 0; j < $(".den")[i].childNodes.length; j++) {
+          var ucitel = $(".den")[i].childNodes[j].childNodes[0].value;
+          var predmet = $(".den")[i].childNodes[j].childNodes[2].value;
+          var mistnost = $(".den")[i].childNodes[j].childNodes[4].value;
+          tyden[i].push(new Hodiny(ucitel, predmet, mistnost));
+        }
+      }
+
+      console.log(tyden);
+    }
+  </script>
+</body>
+
+</html>
