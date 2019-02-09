@@ -26,24 +26,14 @@
 </template>
 
 <script lang="js">
-import SchoolHours from '../assets/default.json'
+import schoolLessons from '../assets/default.json'
 const moment = require('moment')
 export default {
   name: 'PageTimeTable',
   data: function () {
-    let maxHour = 0
-    for (let day of SchoolHours) {
-      if (day.length > length) maxHour = day.length
-    }
-
-    let array = ['0.', '1.', '2.', '3.', '4.', '5.', '6.', '7.', '8.']
-    array.length = maxHour
-
     return {
-      test: JSON.stringify(SchoolHours[0][4]) === JSON.stringify(SchoolHours[0][5]),
-      head: array,
       hours: ['07:00:00', '07:45:00', '07:55:00', '08:40:00', '08:50:00', '09:35:00', '09:50:00', '10:35:00', '10:45:00', '11:30:00', '12:00:00', '12:45:00', '12:55:00', '13:40:00', '13:50:00', '14:35:00'],
-      bodyData: SchoolHours,
+      bodyData: schoolLessons,
       colors: {
         'M': 'FC2847',
         'A': '1DACD6',
@@ -59,8 +49,8 @@ export default {
   },
   computed: {
     computedLessons: function () {
-      for (let dayIndex in SchoolHours) {
-        let day = SchoolHours[dayIndex]
+      for (let dayIndex in schoolLessons) {
+        let day = schoolLessons[dayIndex]
         for (let lessonIndex in day) {
           let lesson = day[lessonIndex]
           lesson.start = this.hours[ parseInt(lessonIndex) * 2 ]
@@ -70,7 +60,7 @@ export default {
           lesson.color = '#' + this.colors[lesson.predmet]
         }
       }
-      return SchoolHours.map(x => x.filter(function (value, index, arr) {
+      return schoolLessons.map(x => x.filter(function (value, index, arr) {
         return value.predmet !== ' '
       }))
     }
