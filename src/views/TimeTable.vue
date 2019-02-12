@@ -60,7 +60,7 @@ export default {
           lesson.color = '#' + this.colors[lesson.predmet]
         }
       }
-      return schoolLessons.map(x => x.filter(function (value, index, arr) {
+      return schoolLessons.map(lesson => lesson.filter(function (value, index, arr) {
         return value.predmet !== ' '
       }))
     }
@@ -79,38 +79,38 @@ export default {
 </script>
 
 <style scoped lang="css">
-  .teacher{
-    text-align: left;
-  }
+.teacher {
+  text-align: left;
+}
 
-  .subject{
-    text-align: center;
-  }
+.subject {
+  text-align: center;
+}
 
-  .room{
-    text-align: right;
-  }
+.room {
+  text-align: right;
+}
 
-  .lesson {
-    float: left;
-    border: 1px solid #000000;
-    /* margin-top: 5px; */
-    position: absolute;
-    border-radius: 10px;
-  }
+.lesson {
+  float: left;
+  border: 1px solid #000000;
+  /* margin-top: 5px; */
+  position: absolute;
+  border-radius: 10px;
+}
 
-  .day {
-    border-collapse: collapse;
-    border-spacing: 0;
-    float: left;
-    min-width: 720px;
-    width: 100vw;
-    height: 56px;
-    position: relative;
-  }
+.day {
+  border-collapse: collapse;
+  border-spacing: 0;
+  float: left;
+  min-width: 720px;
+  width: 100vw;
+  height: 56px;
+  position: relative;
+}
 
-  #main {
-    width: 100vw;
-    overflow: auto;
-  }
+#main {
+  width: 100vw;
+  overflow: auto;
+}
 </style>
