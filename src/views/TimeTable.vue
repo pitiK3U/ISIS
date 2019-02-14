@@ -29,35 +29,30 @@
 import schoolLessons from '../assets/default.json'
 const moment = require('moment')
 export default {
-  name: 'PageTimeTable',
-  data: function () {
-    return {
-      hours: ['07:00:00', '07:45:00', '07:55:00', '08:40:00', '08:50:00', '09:35:00', '09:50:00', '10:35:00', '10:45:00', '11:30:00', '12:00:00', '12:45:00', '12:55:00', '13:40:00', '13:50:00', '14:35:00'],
-      bodyData: schoolLessons,
-      colors: {
-        'M': 'FC2847',
-        'A': '1DACD6',
-        'Č': 'C5E384',
-        'N': 'FF7538',
-        'D': 'B4674D',
-        'Z': '1F75FE',
-        'F': '7366BD',
-        'Sv': 'FCE883',
-        'Bi': '1CAC78'
-      }
-    }
-  },
+  name: 'ViewTimeTable',
   computed: {
     computedLessons: function () {
+      const HOURS = ['07:00:00', '07:45:00', '07:55:00', '08:40:00', '08:50:00', '09:35:00', '09:50:00', '10:35:00', '10:45:00', '11:30:00', '12:00:00', '12:45:00', '12:55:00', '13:40:00', '13:50:00', '14:35:00']
+      const COLORS = {
+        'M': '#FC2847',
+        'A': '#1DACD6',
+        'Č': '#C5E384',
+        'N': '#FF7538',
+        'D': '#B4674D',
+        'Z': '#1F75FE',
+        'F': '#7366BD',
+        'Sv': '#FCE883',
+        'Bi': '#1CAC78'
+      }
       for (let dayIndex in schoolLessons) {
         let day = schoolLessons[dayIndex]
         for (let lessonIndex in day) {
           let lesson = day[lessonIndex]
-          lesson.start = this.hours[ parseInt(lessonIndex) * 2 ]
-          lesson.end = this.hours[ parseInt(lessonIndex) * 2 + 1 ]
+          lesson.start = HOURS[ parseInt(lessonIndex) * 2 ]
+          lesson.end = HOURS[ parseInt(lessonIndex) * 2 + 1 ]
           lesson.left = this.pos(lesson.start) + 'px'
           lesson.width = parseFloat(this.pos(lesson.end)) - parseFloat(lesson.left) + 'px'
-          lesson.color = '#' + this.colors[lesson.predmet]
+          lesson.color = COLORS[lesson.predmet]
         }
       }
       return schoolLessons.map(lesson => lesson.filter(function (value, index, arr) {
@@ -94,7 +89,6 @@ export default {
 .lesson {
   float: left;
   border: 1px solid #000000;
-  /* margin-top: 5px; */
   position: absolute;
   border-radius: 10px;
 }
