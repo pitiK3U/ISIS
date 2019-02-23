@@ -3,6 +3,7 @@
     <div class = "day"
       v-for = "(day, dayIndex) in computedLessons"
       :key = "dayIndex"
+      :style = "{ height: height }"
         >
       <div
         class = "lesson"
@@ -32,7 +33,24 @@ export default {
   name: 'ViewTimeTable',
   computed: {
     computedLessons: function () {
-      const HOURS = ['07:00:00', '07:45:00', '07:55:00', '08:40:00', '08:50:00', '09:35:00', '09:50:00', '10:35:00', '10:45:00', '11:30:00', '12:00:00', '12:45:00', '12:55:00', '13:40:00', '13:50:00', '14:35:00']
+      const HOURS = [
+        '07:00:00',
+        '07:45:00',
+        '07:55:00',
+        '08:40:00',
+        '08:50:00',
+        '09:35:00',
+        '09:50:00',
+        '10:35:00',
+        '10:45:00',
+        '11:30:00',
+        '12:00:00',
+        '12:45:00',
+        '12:55:00',
+        '13:40:00',
+        '13:50:00',
+        '14:35:00'
+      ]
       const COLORS = {
         'M': '#FC2847',
         'A': '#1DACD6',
@@ -58,6 +76,9 @@ export default {
       return schoolLessons.map(lesson => lesson.filter(function (value, index, arr) {
         return value.predmet !== ' '
       }))
+    },
+    height: () => {
+      return parseInt(window.getComputedStyle(document.getElementById('app')).getPropertyValue('line-height')) * 3 + 2 + 'px'
     }
   },
   methods: {

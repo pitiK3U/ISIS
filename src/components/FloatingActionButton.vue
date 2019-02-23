@@ -61,7 +61,7 @@ export default {
   }
 }
 
- .buttons {
+.buttons {
   background-color: white;
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),
               0 6px 10px 0 rgba(0,0,0,.14),
