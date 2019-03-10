@@ -23,7 +23,8 @@ export default {
       time: moment(),
       width: null,
       checkTime: null,
-      index: null
+      index: null,
+      timeNotified: moment('00:00:00', 'HH:mm:ss')
     }
   },
   methods: {
@@ -34,8 +35,10 @@ export default {
       this.time = moment()
       this.check()
       // console.log(this.checkTime.format('HH:mm'), this.time.format('HH:mm'))
-      if (this.checkTime.format('HH:mm') === this.time.format('HH:mm')) {
+      if ((this.time.format('HH:mm') === this.checkTime.format('HH:mm')) &&
+          (this.timeNotified.format('HH:mm') !== this.checkTime.format('HH:mm'))) {
         this.notify()
+        this.timeNotified = moment()
       }
     },
     check: function () {
@@ -44,7 +47,8 @@ export default {
         const end = moment(this.json[++index], 'HH:mm:ss')
         if (this.time.isBetween(start, end)) {
           this.index = index
-          this.width = (this.time.toDate().getTime() - start.toDate().getTime()) / (end.toDate().getTime() - start.toDate().getTime()) * 100 + '%'
+          this.width = (this.time.toDate().getTime() - start.toDate().getTime()) /
+                       (end.toDate().getTime() - start.toDate().getTime()) * 100 + '%'
           this.checkTime = end.subtract(5, 'minutes')
           break
         } else this.width = 0
@@ -55,7 +59,12 @@ export default {
       if (Notification.permission === 'granted') {
         navigator.serviceWorker.ready.then(registration => {
           const day = this.time.day() - 1
-          registration.showNotification(this.time.format('HH:mm:ss'), { body: 'Next subject is ' + SchoolHours[day][Math.round(this.index / 2)].predmet + ' in ' + SchoolHours[day][Math.round(this.index / 2)].mistnost + ', starts: ' + this.json[this.index] })
+          registration.showNotification(this.time.format('HH:mm:ss'), {
+            body: 'Next subject is ' +
+              SchoolHours[day][Math.round(this.index / 2)].predmet +
+              ' in ' +
+              SchoolHours[day][Math.round(this.index / 2)].mistnost +
+              ', starts: ' + this.json[this.index] })
         })
       }
     }

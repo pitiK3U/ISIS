@@ -3,9 +3,6 @@
 // vue.config.js
 module.exports = {
   // options...
-  devServer: {
-    https: true
-  },
   pwa: {
     name: 'My App',
     themeColor: '#4DBA87',

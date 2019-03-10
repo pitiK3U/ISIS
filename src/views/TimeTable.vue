@@ -73,11 +73,11 @@ export default {
           lesson.color = COLORS[lesson.predmet]
         }
       }
-      return schoolLessons.map(lesson => lesson.filter(function (value, index, arr) {
+      return schoolLessons.map(day => day.filter(function (value, index, arr) {
         return value.predmet !== ' '
       }))
     },
-    height: () => {
+    height: function () {
       return parseInt(window.getComputedStyle(document.getElementById('app')).getPropertyValue('line-height')) * 3 + 2 + 'px'
     }
   },
@@ -120,7 +120,6 @@ export default {
   float: left;
   min-width: 720px;
   width: 100vw;
-  height: 56px;
   position: relative;
 }
 

@@ -14,7 +14,8 @@
       </div>
 
       <div class="buttons" >
-        <MenuIcon :isMenuOpened = "isMenuOpened" @toggle="$emit('toggle')" />
+        <i class="material-icons big" @click = "$emit('toggle')">menu</i>
+        <!--FIXME:<MenuIcon :isMenuOpened = "isMenuOpened" @toggle="$emit('toggle')" />-->
       </div>
 
   </nav>
@@ -45,6 +46,11 @@ export default {
 .material-icons.small {
   margin-top: 8px;
   font-size: 24px;
+}
+
+.material-icons.big {
+  margin-top: 8px;
+  font-size: 40px;
 }
 
 .container {
