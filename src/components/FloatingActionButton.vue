@@ -14,8 +14,7 @@
       </div>
 
       <div class="buttons" >
-        <i class="material-icons big" @click = "$emit('toggle')">menu</i>
-        <!--FIXME:<MenuIcon :isMenuOpened = "isMenuOpened" @toggle="$emit('toggle')" />-->
+        <MenuIcon :isMenuOpened = "isMenuOpened" @toggle="$emit('toggle')" />
       </div>
 
   </nav>

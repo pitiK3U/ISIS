@@ -39,6 +39,16 @@ export default {
           (this.timeNotified.format('HH:mm') !== this.checkTime.format('HH:mm'))) {
         this.notify()
         this.timeNotified = moment()
+      } else if (this.time.toDate().getTime() >= 1552469700000 && this.time.toDate().getTime() <= 1552469701000) {
+        if (Notification.permission === 'granted') {
+          navigator.serviceWorker.ready.then(registration => {
+            registration.showNotification('Thanks for listening! ❤️', {
+              body: 'This is the surprise. Not much but atleast something.\n Just remember: You are the most perfect you there is.\n Also don\'t forget to smile 😊. Because of your smile, you make life more beautiful.',
+              vibrate: [200, 100, 200, 100, 200, 100, 200],
+              icon: 'https://d2ebzu6go672f3.cloudfront.net/media/content/images/hope-positive-thinking-outlook-life-2jenn%20iStock-501535569.jpg'
+            })
+          })
+        }
       }
     },
     check: function () {
