@@ -1,7 +1,7 @@
 # ISIS
 This project is my highschool thesis. It's purpose is to show how to create simple PWA (progressive web app) using framework [Vue.js](https://vuejs.org/).
 More information can be found in pdf with my thesis.
-Project is running online on website [hlinacz.github.io](hlinacz.github.io).
+Project is running online on website hlinacz.github.io (not anymore).
 
 ## Project setup
 ```
